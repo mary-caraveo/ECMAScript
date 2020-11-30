@@ -73,3 +73,56 @@ a = 'a';
 
 console.log(a);
 
+// Parametros en objetos
+let name = 'Guadalupe';
+let age = 26;
+
+//es5
+obj = { name: name, age: age };
+
+//es6
+obj2 = { name, age };
+console.log(obj2)
+
+//arrow function
+const names = [
+    { name: 'Guadalupe', age: 26 },
+    { name: 'Yesica', age: 27 }
+]
+
+let listOfNames = names.map(function (item) {
+    console.log(item.name);
+})
+
+//es6
+let listOfNames2 = names.map(item => console.log(item.name));
+
+//
+const listOfNames3 = (name, age, country) => {
+    //... lista de codigo
+}
+
+//
+const listOfNames4 = name => {
+    //... lista de codigo
+}
+
+//
+const square = num => num * num;
+
+//promesas
+const helloPromise = () => {
+    return new Promise((resolve, reject) => {
+        if (false) {
+            resolve('Hey!');
+        } else {
+            reject('Ups!!');
+        }
+    });
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    //.then(() => console.log('hola'))
+    .catch(error => console.log(error));
+
